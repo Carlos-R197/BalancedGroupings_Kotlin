@@ -9,10 +9,11 @@ class BalancedGroupingProblem {
     fun isBalanced(sequence: String): Boolean {
         val stack = ArrayDeque<Char>()
 
-        for (c in stack) {
-            if (c == '(' || c == '[' || c == '{')
+        for (c in sequence) {
+            if (c == '(' || c == '[' || c == '{') {
                 stack.push(c)
-            else if (c == ')' || c == ']' || c == '}'){
+            }
+            else if (c == ')' || c == ']' || c == '}') {
                 if (stack.size == 0)
                     return false
                 else {
@@ -22,10 +23,10 @@ class BalancedGroupingProblem {
             }
         }
 
-        if (stack.size == 0)
-            return true
-        else 
+        if (stack.size > 0)
             return false
+        else 
+            return true
     }
 
     private fun isMatchingBracket(a: Char, b: Char): Boolean {
