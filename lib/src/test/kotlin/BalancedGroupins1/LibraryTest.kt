@@ -24,4 +24,8 @@ class BalancedGroupingTest {
     @Test fun UnMatchingGroupingTest() {
         assertEquals(false, classUnderTest.isBalanced("[a + b)"))
     }
+
+    @Test fun MultipleUnmatchingGroupingsTest() {
+        assertEquals(false, classUnderTest.isBalanced("{(a + b] + [c + d) + e}"))
+    }
 }
