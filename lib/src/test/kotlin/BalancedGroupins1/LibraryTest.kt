@@ -4,11 +4,12 @@
 package BalancedGroupins1
 
 import kotlin.test.Test
-import kotlin.test.assertTrue
+import kotlin.test.assertEquals
 
-class LibraryTest {
-    @Test fun testSomeLibraryMethod() {
-        val classUnderTest = Library()
-        assertTrue(classUnderTest.someLibraryMethod(), "someLibraryMethod should return 'true'")
+class BalancedGroupingTest {
+    val classUnderTest = BalancedGroupingProblem()
+
+    @Test fun EmptyStringTest() {
+        assertEquals(true, classUnderTest.isBalanced(" "))
     }
 }

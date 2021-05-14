@@ -3,8 +3,8 @@
  */
 package BalancedGroupins1
 
-class Library {
-    fun someLibraryMethod(): Boolean {
+class BalancedGroupingProblem {
+    fun isBalanced(sequence: String): Boolean {
         return true
     }
 }
