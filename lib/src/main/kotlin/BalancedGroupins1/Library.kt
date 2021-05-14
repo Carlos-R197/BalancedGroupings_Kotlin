@@ -3,8 +3,39 @@
  */
 package BalancedGroupins1
 
+import java.util.ArrayDeque
+
 class BalancedGroupingProblem {
     fun isBalanced(sequence: String): Boolean {
-        return true
+        val stack = ArrayDeque<Char>()
+
+        for (c in stack) {
+            if (c == '(' || c == '[' || c == '{')
+                stack.push(c)
+            else if (c == ')' || c == ']' || c == '}'){
+                if (stack.size == 0)
+                    return false
+                else {
+                    if (!isMatchingBracket(stack.pop(), c))
+                        return false
+                }
+            }
+        }
+
+        if (stack.size == 0)
+            return true
+        else 
+            return false
+    }
+
+    private fun isMatchingBracket(a: Char, b: Char): Boolean {
+        if (a == '(' && b == ')')
+            return true
+        else if (a == '[' && b == ']')
+            return true
+        else if (a == '{' && b == '}')
+            return true
+        else
+            return false
     }
 }

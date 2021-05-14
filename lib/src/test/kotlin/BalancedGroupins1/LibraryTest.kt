@@ -12,4 +12,8 @@ class BalancedGroupingTest {
     @Test fun EmptyStringTest() {
         assertEquals(true, classUnderTest.isBalanced(" "))
     }
+
+    @Test fun NoGrupingsTest() {
+        assertEquals(true, classUnderTest.isBalanced("a + b"))
+    }
 }
